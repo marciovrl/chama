@@ -1,4 +1,4 @@
-# chama
+# chama [![CircleCI](https://circleci.com/gh/marciovrl/chama.svg?style=svg)](https://circleci.com/gh/marciovrl/chama)
 
 Chama - QA assignment
 
@@ -24,7 +24,7 @@ The test run in Cypress and report HTML in mochawesome. The CI is configured on 
 ### Structure
 
 ```
-takeaway-selenium/
+chama/
  ├─ cypress/
  |   ├─ fixtures/
  |   |─ integration/
@@ -58,7 +58,7 @@ takeaway-selenium/
 
 ### Tips
 
-- With Cypress You dont need drivers.
+- Cypress does not need drivers.
 
 ## Commands
 
