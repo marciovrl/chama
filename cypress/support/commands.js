@@ -1,25 +1,21 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+/// <reference types="cypress" />
+
+Cypress.Commands.add('login', (credentials) => {
+  cy.get('#email').type(credentials.name);
+  cy.get('#passwd').type(credentials.password);
+  cy.get('#SubmitLogin').click();
+});
+
+Cypress.Commands.add('addProdutcToCart', () => {
+  cy.get("a[data-id-product= '1']").click({ multiple: true, force: true });
+  cy.get("[title='Proceed to checkout']").click();
+  cy.get('.cart_navigation > .button > span').click();
+});
+
+Cypress.Commands.add('doOrder', () => {
+  cy.get("[name='processAddress']").click();
+  cy.get('#cgv').check();
+  cy.get("[name='processCarrier']").click();
+  cy.get("[title='Pay by check.']").click();
+  cy.get('.button').contains('I confirm my order').click();
+});
