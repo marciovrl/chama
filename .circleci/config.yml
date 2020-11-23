@@ -13,7 +13,7 @@ workflows:
           record: false
           command: |
             npm run test:chrome
-            npm run npm run cypress:report
+            npm run cypress:report
             echo "command to send the report to email/slack"
           parallel: true
           parallelism: 2
