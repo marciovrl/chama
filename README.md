@@ -64,6 +64,7 @@ chama/
 
 - Execute all tests on Google Chrome headless: `npm run test:chrome`
 - Execute all tests on Firefox headless: `npm run test:firefox`
+- Generate HTML report: `npm run cypress:report`
 - Open Cypress console: `npm run cypress`
 
 ## Notes
