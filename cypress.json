@@ -1,4 +1,8 @@
 {
     "baseUrl": "http://automationpractice.com",
-    "reporter": "cypress-mochawesome-reporter"
+    "reporter": "cypress-mochawesome-reporter",
+    "retries": {
+        "runMode": 2,
+        "openMode": 0
+    }
 }
